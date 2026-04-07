@@ -1,0 +1,134 @@
+.navbar{
+    height: 5rem;
+    width: 100%;
+    max-width: 80%;
+    background-color: white;
+    margin: 0 auto;
+    padding: 2rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    font-family: "Poppins";
+    /* border-bottom: 2px solid rgba(0, 0, 0, 0.103); */
+}
+
+.logo{
+    object-fit: cover;
+    height: 5rem;
+    width:9rem;
+    cursor: pointer;
+}
+
+
+
+.nav-links li{
+    list-style: none;
+    display: inline;
+    padding: 1.5rem;
+    
+}
+.nav-links li a{
+    color: #1d1e6d;
+    font-weight: 500;
+    
+}
+.nav-links li a:hover{
+    transition: 0.3sec;
+    color: rgb(20, 63, 112);
+    padding-bottom: 0.3rem;
+    border-bottom: 2px solid rgb(24, 15, 110);
+   
+}
+
+/* From Uiverse.io by SujitAdroja */ 
+.downlode-resume {
+  color: #1d1e6d;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 2px solid #084C61;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 17px;
+  cursor: pointer;
+  font-weight: bold;
+  background: transparent;
+  position: relative;
+  transition: all 1s;
+  overflow: hidden;
+}
+
+.downlode-resume:hover {
+  color: white;
+}
+
+.downlode-resume::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  top: 0;
+  left: -40px;
+  transform: skewX(45deg);
+  background-color:#084C61;
+  z-index: -1;
+  transition: all 1s;
+}
+
+.downlode-resume:hover::before {
+  width: 160%;
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+  .navbar {
+    max-width: 100%;
+    padding: 1rem 1.5rem;
+    flex-direction: row;
+  }
+
+  .logo {
+    height: 4rem;
+    width: 7rem;
+  }
+
+  /* Hide nav links initially (for mobile menu) */
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  }
+
+  /* Show when active */
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    display: block;
+    padding: 1rem 0;
+  }
+
+  /* Adjust button */
+  .downlode-resume {
+    font-size: 14px;
+    padding: 8px 15px;
+    margin-top: 10px;
+  }
+
+  /* Optional: center align everything */
+  .navbar {
+    align-items: center;
+  }
+}

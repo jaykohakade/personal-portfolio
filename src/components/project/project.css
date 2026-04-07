@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap');
+
+.container {
+  height: 300vh;
+  /* important for scroll */
+  padding-top: 50px;
+}
+
+
+.container .project-heading p {
+  margin: auto;
+  align-items: center;
+  text-align: center;
+  font-family: "Poppins";
+  font-size: 25px;
+  color: gray;
+
+}
+
+.container .project-heading h5 {
+  margin: auto;
+  align-items: center;
+  text-align: center;
+  font-family: "Poppins";
+  font-size: 50px;
+  color: #1d1e6d;
+
+}
+
+.card {
+  position: sticky;
+  top: 150px;
+  /* controls where it sticks */
+
+  height: 70vh;
+  margin: 70px auto;
+  width: 70%;
+  border: 1px solid rgba(128, 128, 128, 0.295);
+  background: white;
+  border-radius: 15px;
+  /* box-shadow: 0 10px 30px rgba(0,0,0,0.1); */
+
+  display: flex;
+  /* align-items: center; */
+  /* justify-content: center; */
+
+  font-size: 24px;
+}
+
+.card {
+  transition: transform 0.3s ease;
+}
+
+.card:not(:first-child) {
+  transform: scale(0.99);
+}
+
+.card img {
+  width: 60%;
+  height: 90%;
+  object-fit: cover;
+  display: flex;
+  flex-direction: row;
+  /* margin: auto; */
+  margin-left: 533px;
+  margin-top: 30px;
+  /* border-radius: 20px; */
+  border-left: 20px solid rgba(128, 128, 128, 0.205);
+  border-top: 20px solid black;
+  border-bottom: 20px solid black;
+}
+
+/* Dark overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* vertical center */
+  align-items: flex-start;
+  /* left align */
+
+  padding: 50px;
+}
+
+/* Text styling */
+
+.overlay h5 {
+  color: rgb(83, 83, 83);
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  font-family: "Poppins";
+}
+
+.overlay h2 {
+  color: rgb(0, 0, 0);
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-family: "Poppins";
+}
+
+.overlay p {
+  color: #3f3f3f;
+  max-width: 400px;
+  margin-bottom: 15px;
+  font-family: "Poppins";
+  font-weight: 400;
+}
+
+.overlay .p1 {
+  font-size: 20px;
+  font-weight: 200;
+}
+
+
+.overlay button {
+  width: 100%;
+  color: #1d1e6d;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 2px solid #084C61;
+  border-radius: 10px;
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 17px;
+  cursor: pointer;
+  font-weight: bold;
+  background: transparent;
+  position: relative;
+  transition: all 1s;
+  overflow: hidden;
+}
+
+.overlay button:hover {
+  color: white;
+}
+
+.overlay button::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  top: 0;
+  left: -40px;
+  transform: skewX(45deg);
+  background-color: #084C61;
+  z-index: -1;
+  transition: all 1s;
+}
+
+.overlay button:hover::before {
+  width: 160%;
+}

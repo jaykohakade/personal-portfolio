@@ -1,0 +1,36 @@
+.foot-container {
+    margin: auto;
+    width: 80%;
+    height: 10vh;
+    background-color: rgba(128, 128, 128, 0);
+    border-top: 1px solid rgba(128, 128, 128, 0.568);
+    display: flex;
+}
+
+.rights {
+    font-family: "Poppins";
+    color: gray;
+    padding: 30px;
+}
+
+.links {
+    padding-top: 40px;
+    margin-left: 60%;
+}
+
+.links li {
+    list-style-type: none;
+    display: inline;
+    text-align: start;
+    margin-left: 20px;
+}
+
+.links li a {
+    cursor: pointer;
+    text-decoration: none;
+    color: gray;
+}
+
+.links li a:hover {
+    color: black;
+}

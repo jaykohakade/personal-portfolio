@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+
+#intro {
+  height: calc(100vh -5rem);
+  width: 100vw;
+  max-width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+  /* position: relative; */
+}
+
+.bg-image {
+  position: absolute;
+  top: 5rem;
+  right: 10rem;
+  z-index: -1;
+  object-fit: cover;
+  height: 90vh;
+  border-bottom: 5px solid black;
+  filter: drop-shadow(10px 0 20px rgba(0, 0, 0, 0.3));
+}
+
+.introContent {
+  height: 100vh;
+  width: 100vw;
+  padding: 2rem;
+  /* font-size: 3rem;
+    font-weight: 500; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.intro-text {
+  font-family: "Lora", serif;
+  font-weight: 800;
+  font-size: 3rem;
+  color: #1d1e6d;
+}
+
+.intro-para {
+  margin-top: 20px;
+  font-size: 1.3rem;
+  font-family: "Poppins";
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.main-para {
+  font-weight: 500;
+  color: #3f42f3;
+}
+
+#btn {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+}
+
+.explore-work {
+  width: 12%;
+  color: #1d1e6d;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 2px solid #084C61;
+  border-radius: 10px;
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 17px;
+  cursor: pointer;
+  font-weight: bold;
+  background: transparent;
+  position: relative;
+  transition: all 1s;
+  overflow: hidden;
+}
+
+.explore-work:hover {
+  color: white;
+}
+
+.explore-work::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  top: 0;
+  left: -40px;
+  transform: skewX(45deg);
+  background-color: #084C61;
+  z-index: -1;
+  transition: all 1s;
+}
+
+.explore-work:hover::before {
+  width: 160%;
+}
+
+
+
+.lets-connect {
+  width: 12%;
+  color: #1d1e6d;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 2px solid #084C61;
+  border-radius: 10px;
+  margin-left: 10px;
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 17px;
+  cursor: pointer;
+  font-weight: bold;
+  background: transparent;
+  position: relative;
+  transition: all 1s;
+  overflow: hidden;
+}
+
+.lets-connect:hover {
+  color: white;
+}
+
+.lets-connect::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  top: 0;
+  left: -40px;
+  transform: skewX(45deg);
+  background-color: #084C61;
+  z-index: -1;
+  transition: all 1s;
+}
+
+.lets-connect:hover::before {
+  width: 160%;
+}
