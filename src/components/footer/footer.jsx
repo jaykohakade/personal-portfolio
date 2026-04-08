@@ -1,28 +1,35 @@
-import React from 'react'
+import React from 'react';
 import './footer.css';
 
+const socials = [
+  { icon: 'fa-brands fa-linkedin',  href: 'https://www.linkedin.com/in/jayesh-kohakade-635110240/', label: 'LinkedIn'  },
+  { icon: 'fa-brands fa-twitter',   href: 'https://twitter.com/yourhandle',                          label: 'Twitter'   },
+  { icon: 'fa-brands fa-instagram', href: 'https://instagram.com/yourhandle',                        label: 'Instagram' },
+  { icon: 'fa-brands fa-whatsapp',  href: 'https://wa.me/yourphonenumber',                           label: 'WhatsApp'  },
+];
+
 const Footer = () => {
-    return (
-        <div className='foot-container'>
+  return (
+    <footer className="foot-container">
 
+      <div className="rights">
+        <p>© {new Date().getFullYear()} Jay. All rights reserved.</p>
+      </div>
 
-            <div className="rights">
+      <div className="links">
+        <ul>
+          {socials.map(({ icon, href, label }) => (
+            <li key={label}>
+              <a href={href} target="_blank" rel="noreferrer" aria-label={label}>
+                <i className={icon} />
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
 
-                <p>All Rights Reserved @jay</p>
-            </div>
-
-            <div className="links">
-                <ul>
-                    <li><a href="https://www.linkedin.com/in/jayesh-kohakade-635110240/" target="_blank" rel="noreferrer"><i class="fa-brands fa-linkedin"></i></a> </li>
-                    <li><a href="https://www.linkedin.com/in/jayesh-kohakade-635110240/" target="_blank" rel="noreferrer"><i class="fa-brands fa-twitter"></i></a> </li>
-                    <li><a href="https://www.linkedin.com/in/jayesh-kohakade-635110240/" target="_blank" rel="noreferrer"><i class="fa-brands fa-instagram"></i></a></li>
-                    <li><a href="https://www.linkedin.com/in/jayesh-kohakade-635110240/" target="_blank" rel="noreferrer"><i class="fa-brands fa-whatsapp"></i> </a></li>
-                </ul>
-
-            </div>
-
-        </div>
-    )
-}
+    </footer>
+  );
+};
 
 export default Footer;

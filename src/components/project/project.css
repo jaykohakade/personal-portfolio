@@ -1,160 +1,325 @@
-@import url('https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap');
 
-.container {
-  height: 300vh;
-  /* important for scroll */
-  padding-top: 50px;
+:root {
+  --navy: #0d1b3e;
+  --accent: #2563eb;
+  --accent-light: #3b82f6;
+  --text: #1e293b;
+  --muted: #64748b;
+  --white: #ffffff;
+  --surface: #f8faff;
+  --border: rgba(13, 27, 62, 0.08);
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --font-body: 'DM Sans', sans-serif;
+  --font-display: 'Playfair Display', serif;
 }
 
+/* ── Section wrapper ── */
+.projects-section {
+  width: 100%;
+  background: var(--surface);
+  padding: 6rem 0;
+}
 
-.container .project-heading p {
-  margin: auto;
-  align-items: center;
+/* ── Section heading ── */
+.project-heading {
   text-align: center;
-  font-family: "Poppins";
-  font-size: 25px;
-  color: gray;
-
+  margin-bottom: 4rem;
+  padding: 0 1.5rem;
 }
 
-.container .project-heading h5 {
-  margin: auto;
-  align-items: center;
-  text-align: center;
-  font-family: "Poppins";
-  font-size: 50px;
-  color: #1d1e6d;
-
+.project-heading .eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(37, 99, 235, 0.08);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  border-radius: 100px;
+  padding: 0.35rem 0.9rem;
+  margin-bottom: 1rem;
 }
 
+.project-heading h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+
+.project-heading .sub {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--muted);
+  max-width: 460px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ── Sticky scroll container ── */
+.cards-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  /* height scales with number of cards: each card gets ~100vh of scroll */
+}
+
+/* ── Card ── */
 .card {
   position: sticky;
-  top: 150px;
-  /* controls where it sticks */
-
-  height: 70vh;
-  margin: 70px auto;
-  width: 70%;
-  border: 1px solid rgba(128, 128, 128, 0.295);
-  background: white;
-  border-radius: 15px;
-  /* box-shadow: 0 10px 30px rgba(0,0,0,0.1); */
-
-  display: flex;
-  /* align-items: center; */
-  /* justify-content: center; */
-
-  font-size: 24px;
+  top: 120px;
+  height: auto;
+  min-height: 480px;
+  margin-bottom: 2rem;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  box-shadow: 0 8px 40px rgba(13, 27, 62, 0.07);
+  transition: box-shadow var(--transition), transform var(--transition);
 }
 
-.card {
-  transition: transform 0.3s ease;
+.card:hover {
+  box-shadow: 0 16px 60px rgba(13, 27, 62, 0.12);
+  transform: translateY(-3px);
 }
 
-.card:not(:first-child) {
-  transform: scale(0.99);
-}
+/* Subtle stacking offset for each card */
+.card:nth-child(2) { top: 134px; }
+.card:nth-child(3) { top: 148px; }
+.card:nth-child(4) { top: 162px; }
 
-.card img {
-  width: 60%;
-  height: 90%;
-  object-fit: cover;
-  display: flex;
-  flex-direction: row;
-  /* margin: auto; */
-  margin-left: 533px;
-  margin-top: 30px;
-  /* border-radius: 20px; */
-  border-left: 20px solid rgba(128, 128, 128, 0.205);
-  border-top: 20px solid black;
-  border-bottom: 20px solid black;
-}
-
-/* Dark overlay */
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-
+/* ── Card: content side ── */
+.card-content {
+  padding: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* vertical center */
-  align-items: flex-start;
-  /* left align */
-
-  padding: 50px;
+  gap: 0.75rem;
 }
 
-/* Text styling */
-
-.overlay h5 {
-  color: rgb(83, 83, 83);
-  font-size: 20px;
-  font-weight: 500;
-  margin-bottom: 10px;
-  font-family: "Poppins";
-}
-
-.overlay h2 {
-  color: rgb(0, 0, 0);
-  font-size: 40px;
-  font-weight: 700;
-  margin-bottom: 10px;
-  font-family: "Poppins";
-}
-
-.overlay p {
-  color: #3f3f3f;
-  max-width: 400px;
-  margin-bottom: 15px;
-  font-family: "Poppins";
-  font-weight: 400;
-}
-
-.overlay .p1 {
-  font-size: 20px;
-  font-weight: 200;
-}
-
-
-.overlay button {
-  width: 100%;
-  color: #1d1e6d;
+.card-org {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  text-decoration: none;
-  border: 2px solid #084C61;
-  border-radius: 10px;
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 17px;
-  cursor: pointer;
-  font-weight: bold;
-  background: transparent;
-  position: relative;
-  transition: all 1s;
+  color: var(--accent);
+}
+
+.card-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.card-platform {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.card-divider {
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
+  border-radius: 2px;
+  margin: 0.25rem 0;
+}
+
+.card-description {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  line-height: 1.75;
+  color: #475569;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  line-clamp: 5;
+  -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
-.overlay button:hover {
-  color: white;
+/* ── Tech tags ── */
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
 }
 
-.overlay button::before {
-  content: "";
+.tag {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--navy);
+  background: rgba(13, 27, 62, 0.06);
+  border: 1px solid rgba(13, 27, 62, 0.1);
+  border-radius: 6px;
+  padding: 0.25rem 0.65rem;
+}
+
+/* ── Live Demo Button ── */
+.card-btn {
+  align-self: flex-start;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--navy);
+  border: none;
+  border-radius: 8px;
+  padding: 0.65rem 1.35rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  margin-top: 0.5rem;
+  transition: transform var(--transition), box-shadow var(--transition);
+  box-shadow: 0 2px 12px rgba(13, 27, 62, 0.18);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.card-btn::before {
+  content: '';
   position: absolute;
-  height: 100%;
-  width: 0%;
-  top: 0;
-  left: -40px;
-  transform: skewX(45deg);
-  background-color: #084C61;
-  z-index: -1;
-  transition: all 1s;
+  inset: 0;
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  opacity: 0;
+  transition: opacity var(--transition);
 }
 
-.overlay button:hover::before {
-  width: 160%;
+.card-btn span {
+  position: relative;
+  z-index: 1;
+}
+
+.card-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
+}
+
+.card-btn:hover::before {
+  opacity: 1;
+}
+
+/* ── Card: image side ── */
+.card-image-wrap {
+  position: relative;
+  overflow: hidden;
+  border-left: 1px solid var(--border);
+}
+
+.card-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover .card-image-wrap img {
+  transform: scale(1.04);
+}
+
+/* Gradient overlay on image */
+.card-image-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(13,27,62,0.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* ── "Coming soon" placeholder card ── */
+.card.placeholder {
+  min-height: 200px;
+  background: repeating-linear-gradient(
+    -45deg,
+    rgba(37,99,235,0.02),
+    rgba(37,99,235,0.02) 10px,
+    transparent 10px,
+    transparent 20px
+  );
+  border: 1.5px dashed rgba(37, 99, 235, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none;
+}
+
+.card.placeholder:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.placeholder-text {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .card {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    position: relative;
+    top: auto !important;
+  }
+
+  .cards-container {
+    padding: 0 1.25rem;
+  }
+
+  .card-image-wrap {
+    height: 220px;
+    border-left: none;
+    border-top: 1px solid var(--border);
+    order: -1; /* image on top for mobile */
+  }
+
+  .card-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .card-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .projects-section {
+    padding: 4rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-content {
+    padding: 1.5rem 1rem;
+  }
+
+  .card-image-wrap {
+    height: 180px;
+  }
+
+  .project-heading {
+    margin-bottom: 2.5rem;
+  }
 }

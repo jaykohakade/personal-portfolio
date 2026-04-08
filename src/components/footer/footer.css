@@ -1,36 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --navy: #0d1b3e;
+  --accent: #2563eb;
+  --accent-light: #3b82f6;
+  --muted: #64748b;
+  --white: #ffffff;
+  --border: rgba(13, 27, 62, 0.08);
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --font-body: 'DM Sans', sans-serif;
+}
+
+/* ── Footer ── */
 .foot-container {
-    margin: auto;
-    width: 80%;
-    height: 10vh;
-    background-color: rgba(128, 128, 128, 0);
-    border-top: 1px solid rgba(128, 128, 128, 0.568);
-    display: flex;
+  width: 100%;
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;  /* ← left/right, no hardcoded margin */
+  gap: 1rem;
 }
 
+/* ── Copyright ── */
 .rights {
-    font-family: "Poppins";
-    color: gray;
-    padding: 30px;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-weight: 400;
 }
 
-.links {
-    padding-top: 40px;
-    margin-left: 60%;
-}
-
-.links li {
-    list-style-type: none;
-    display: inline;
-    text-align: start;
-    margin-left: 20px;
+/* ── Social icons ── */
+.links ul {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .links li a {
-    cursor: pointer;
-    text-decoration: none;
-    color: gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color var(--transition), border-color var(--transition),
+              background var(--transition), transform var(--transition);
 }
 
 .links li a:hover {
-    color: black;
+  color: var(--accent);
+  border-color: rgba(37, 99, 235, 0.25);
+  background: rgba(37, 99, 235, 0.06);
+  transform: translateY(-2px);
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .foot-container {
+    max-width: 92%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    padding: 1.5rem 0 2rem;
+  }
 }
