@@ -1,6 +1,7 @@
 import React from 'react';
 import './project.css';
 import img1 from '../../asest/project-one.png';
+import img2 from '../../asest/project-two.png';
 
 const projects = [
   {
@@ -12,11 +13,17 @@ const projects = [
       'An e-learning platform built with React.js, Node.js, and MySQL that enables users to access courses, track progress, and participate in quizzes or live sessions. Designed for a fast, responsive experience with secure data handling and scalable performance.',
     tags: ['React.js', 'Node.js', 'MySQL', 'REST API'],
     image: img1,
-    demoLink: 'https://your-demo-link.com',
+    demoLink: 'https://cashflow-rho-nine.vercel.app/',
   },
   {
     id: 2,
-    title: 'Project Two',
+     org: 'Cashflow Pvt. Ltd. · 2026',
+    title: 'Cashflow ERP',
+    platform: 'Enterprise Resource Planning (ERP)',
+    description: 'Cashflow is a comprehensive Fintech Operations Management system featuring a dual-dashboard architecture for centralized Administration and localized Branch management.',
+    tags: ['React.js', 'Node.js', 'MongoDB', 'REST API'],
+    image: img2,
+    demoLink: 'https://your-demo-link.com',
     placeholder: true,
   },
   {
