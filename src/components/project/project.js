@@ -24,7 +24,7 @@ const projects = [
     tags: ['React.js', 'Node.js', 'MongoDB', 'REST API'],
     image: img2,
     demoLink: 'https://your-demo-link.com',
-    placeholder: true,
+    // placeholder: true,
   },
   {
     id: 3,
