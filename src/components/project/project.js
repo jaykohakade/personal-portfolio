@@ -17,14 +17,14 @@ const projects = [
   },
   {
     id: 2,
-     org: 'Cashflow Pvt. Ltd. · 2026',
+    org: 'Cashflow Pvt. Ltd. · 2026',
     title: 'Cashflow ERP',
     platform: 'Enterprise Resource Planning (ERP)',
     description: 'Cashflow is a comprehensive Fintech Operations Management system featuring a dual-dashboard architecture for centralized Administration and localized Branch management.',
     tags: ['React.js', 'Node.js', 'MongoDB', 'REST API'],
     image: img2,
-    demoLink: 'https://your-demo-link.com',
-    // placeholder: true,
+    demoLink: 'https://cashflow-rho-nine.vercel.app/',
+    placeholder: false,
   },
   {
     id: 3,
